@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ihor — Візитка | Резюме • Портфоліо • Мультимедія</title>
+  <meta name="description" content="Персональна візитка: резюме, портфоліо та мультимедія Ігоря." />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- Header: логотип + навігація -->
+  <header class="header">
+    <div class="container header__row">
+      <a class="brand" href="#home" data-route="home" aria-label="На головну">
+        <span class="brand__mark">I</span>
+        <span class="brand__text">Ihor Studio</span>
+      </a>
+
+      <!-- Кнопка-бургер для мобільної версії -->
+      <button class="burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="nav" class="nav" aria-label="Основна навігація">
+        <a class="nav__link" href="#home" data-route="home">Головна</a>
+        <a class="nav__link" href="#resume" data-route="resume">Резюме</a>
+        <a class="nav__link" href="#portfolio" data-route="portfolio">Портфоліо</a>
+        <a class="nav__link" href="#media" data-route="media">Мультимедія</a>
+        <a class="nav__link" href="#contacts" data-route="contacts">Контакти</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main: одна сторінка, але секції перемикаються через JS -->
+  <main class="main container" id="app" aria-live="polite">
+
+    <!-- HERO / HOME -->
+    <section class="view is-active" data-view="home">
+      <div class="hero">
+        <div class="hero__content">
+          <p class="badge">Дистанційно • Trainee / Junior</p>
+          <h1 class="hero__title">Ігор Шиян</h1>
+          <p class="hero__subtitle">
+            Front-end / PHP Developer. Будую чисті інтерфейси, думаю про структуру, люблю результат.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#portfolio" data-route="portfolio">Дивитись портфоліо</a>
+            <a class="btn" href="assets/Ihor_Shyian_CV.pdf" download>Завантажити резюме (PDF)</a>
+          </div>
+
+          <ul class="hero__meta">
+            <li><span>Стек:</span> HTML • CSS/SCSS • JS • PHP 8</li>
+            <li><span>Фокус:</span> візитки, лендінги, інтерактив, структура</li>
+            <li><span>Плюс:</span> Photoshop • відеомонтаж</li>
+          </ul>
+        </div>
+
+        <!-- Декор: легка “аура” для відчуття преміальності -->
+        <div class="hero__glow" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section class="view" data-view="resume">
+      <header class="section-head">
+        <h2>Резюме</h2> 
+        <p>Стисла історія. Без води. Тільки те, що продає твою цінність.</p>
+      </header>
+
+      <div class="grid-2">
+        <article class="card">
+            <img src="./img/resume.jpg" alt="" width="400px" height="400px">
+          <h3>Профіль</h3>
+          <p>
+            Розробляю інтерфейси та структурую проєкти. Досвід комерційний мінімальний,
+            але маю практику на власних проєктах і швидко вчуся, коли є чітка задача.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Навички</h3>
+
+          <!-- Прогрес-бари: легко редагувати відсотки -->
+          <div class="skills">
+            <div class="skill">
+              <div class="skill__top"><span>HTML</span><span>85%</span></div>
+              <div class="skill__bar"><i style="width:85%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>CSS / SCSS</span><span>80%</span></div>
+              <div class="skill__bar"><i style="width:80%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>JavaScript</span><span>60%</span></div>
+              <div class="skill__bar"><i style="width:60%"></i></div>
+            </div>
+            <div class="skill">
+              <div class="skill__top"><span>PHP 8</span><span>50%</span></div>
+              <div class="skill__bar"><i style="width:50%"></i></div>
+            </div>
+          </div>
+
+          <p class="muted">
+            * Відсотки — не “понти”, а самокалібрування. На співбесіді чесність працює краще за легенди.
+          </p>
+        </article>
+      </div>
+
+      <article class="card">
+        <h3>Досвід / Проєкти</h3>
+        <ul class="list">
+          <li>Персональна візитка (цей сайт) — SPA логіка, адаптив, UX.</li>
+          <li>Сімейне дерево — навігація між сторінками/персонами, мультимедіа.</li>
+          <li>Навчальні репозиторії на GitHub — вправи та тести.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="view" data-view="portfolio">
+      <header class="section-head">
+        <h2>Портфоліо</h2>
+        <p>Тут живуть кейси. Коротко: що зробив, на чому, який результат.</p>
+      </header>
+      <div class="contacts"></div>
+      <div class="cards">
+        <!-- Картка проєкту -->
+        <article class="card project">
+          <div class="project__top">
+            <h3>Family Tree</h3>
+            <span class="tag">JS • PHP</span>
+          </div>
+          <p class="muted">
+            Сімейне дерево з переходами між родичами, сторінками та мультимедіа.
+          </p>
+          <div class="project__actions">
+            <a class="btn btn--sm" href="#" target="_blank" rel="noreferrer">Live</a>
+            <a class="btn btn--sm" href="https://github.com/Igoryok12/" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn--sm" href="#" download>Download</a>
+          </div>
+        </article>
+
+        <!-- Додай ще проєкти — просто копіюй блок -->
+        <article class="card project">
+          <div class="project__top">
+            <h3>Landing / UI Blocks</h3>
+            <span class="tag">HTML • SCSS</span>
+          </div>
+          <p class="muted">Набір секцій та компонентів для швидкої збірки лендінгів.</p>
+          <div class="project__actions">
+            <a class="btn btn--sm" href="#" target="_blank" rel="noreferrer">Live</a>
+            <a class="btn btn--sm" href="https://github.com/Igoryok12/" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MEDIA -->
+    <section class="view" data-view="media">
+      <header class="section-head">
+        <h2>Мультимедія</h2>
+        <p>Фото, відео, роботи з Photoshop. Твій “додатковий актив”, який вирізняє.</p>
+      </header>
+
+      <div class="grid-3">
+        <!-- Плейсхолдери: заміниш на свої -->
+        <figure class="media">
+          <img src="assets/media-1.jpg" alt="Приклад роботи 1" loading="lazy">
+          <figcaption>Photoshop / Design</figcaption>
+        </figure>
+        <figure class="media">
+          <img src="assets/media-2.jpg" alt="Приклад роботи 2" loading="lazy">
+          <figcaption>Фото / Обробка</figcaption>
+        </figure>
+        <figure class="media">
+          <img src="assets/media-3.jpg" alt="Приклад роботи 3" loading="lazy">
+          <figcaption>Відео / Монтаж</figcaption>
+        </figure>
+      </div>
+
+      <article class="card">
+        <h3>Відео (опціонально)</h3>
+        <p class="muted">Можна вставити YouTube/файл. Я підкажу найчистіший спосіб, щоб не ламало верстку.</p>
+      </article>
+    </section>
+
+    <!-- CONTACTS -->
+    <section class="view" data-view="contacts">
+      <header class="section-head">
+        <h2>Контакти</h2>
+        <p>Канали зв’язку.</p>
+      </header>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3>Швидкий зв’язок</h3>
+          <ul class="list">
+            <li>Email: <a href="mailto:igor.shyan@gmail.com">igor.shyan@gmail.com</a></li>
+            <li>Telegram: <a href="https://t.me/born_from_above1" target="_blank" rel="noreferrer">@born_from_above1</a></li>
+            <li>GitHub: <a href="https://github.com/Igoryok12/" target="_blank" rel="noreferrer">Igoryok12</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/ihor-shyian-410916268/" target="_blank" rel="noreferrer">Ihor Shyian</a></li>
+          </ul>
+            <h3>Телефон</h3>
+          <ul class="list">
+            <li>Vodafone: <a href="tel:+380507046379">+38(050) 704 63 79</a> </li>
+            <li>Kyivstar: <a href="tel:+380979928848">+38(097) 992 88 48 - viber </a></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Міні-форма</h3>
+          <!-- Поки що форма декоративна (без бекенду). Потім підключимо PHP або сервіс. -->
+          <form class="form" id="contactForm">
+            <label>
+              <span>Ім’я</span>
+              <input type="text" name="name" placeholder="Ваше ім’я" required>
+            </label>
+            <label>
+              <span>Повідомлення</span>
+              <textarea name="message" rows="4" placeholder="Коротко: що потрібно?" required></textarea>
+            </label>
+            <button class="btn btn--primary" type="submit">Надіслати</button>
+            <p class="muted" id="formNote"></p>
+          </form>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <span class="muted">© <span id="year"></span> Ihor Studio</span>
+      <button class="linklike" id="themeToggle" type="button">Тема: Dark</button>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
